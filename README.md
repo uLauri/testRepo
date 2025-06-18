@@ -9,4 +9,4 @@ is recommended to be installed on your machine to run the project.
 
 *use "user" and "password" through SwaggerUI login endpoint to retrieve a bearer token.
 
-*add received token before using the "calculate-fee" endpoint to authorize acces.
+*add received token before using the "calculate-fee" endpoint to authorize access.
