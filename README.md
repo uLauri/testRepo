@@ -5,3 +5,8 @@ is recommended to be installed on your machine to run the project.
 #Setup:
 * run "dotnet ef database update" before running the application.
 
+#Testing main endpoint:
+
+*use "user" and "password" through SwaggerUI to retrieve a bearer token.
+
+*add received token before using the "calculate-fee" endpoint to authorize acces.
