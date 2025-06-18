@@ -2,13 +2,8 @@
 using DeliveryApp.Data;
 using DeliveryApp.Models.Fees;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DeliveryApp.Tests
+namespace DeliveryApp.Tests.Data
 {
     public class FeeRepostoryTests
     {
@@ -25,16 +20,16 @@ namespace DeliveryApp.Tests
                 {
                     City = "Tallinn",
                     Vehicle = "car",
-                    RBF = 10
+                    Rbf = 10
                 });
                 await context.SaveChangesAsync();
-                
+
                 var repo = new FeeRepository(context);
 
                 var fees = await repo.GetFeesByCityAndVehicleAsync("tallinn", "car");
 
                 Assert.NotNull(fees);
-                Assert.Equal(10, fees.RBF);
+                Assert.Equal(10, fees.Rbf);
             }
         }
     }

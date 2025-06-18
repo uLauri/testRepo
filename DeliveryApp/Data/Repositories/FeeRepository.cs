@@ -35,12 +35,12 @@ namespace DeliveryApp.Data.Repositories
             var currentFees = await _context.Fees.Where(f => f.City == fees.City && f.Vehicle == vehicle).FirstAsync();
             if (currentFees != null)
             {
-                currentFees.WSEF = fees.WSEF;
-                currentFees.FreezingATEF = fees.FreezingATEF;
-                currentFees.RBF = fees.RBF;
-                currentFees.SnowEF = fees.SnowEF;
-                currentFees.RainEF = fees.RainEF;
-                currentFees.ColdATEF = fees.ColdATEF;
+                currentFees.Wsef = fees.Wsef;
+                currentFees.FreezingAtef = fees.FreezingAtef;
+                currentFees.Rbf = fees.Rbf;
+                currentFees.SnowEf = fees.SnowEf;
+                currentFees.RainEf = fees.RainEf;
+                currentFees.ColdAtef = fees.ColdAtef;
                 currentFees.Modified = DateTime.Now;
                 
                 await _context.SaveChangesAsync();

@@ -1,11 +1,4 @@
 ﻿using Cronos;
-using DeliveryApp.Data;
-using DeliveryApp.Models.Weather;
-using Microsoft.EntityFrameworkCore;
-using System.Globalization;
-using System.Text;
-using System.Xml;
-using System.Xml.Serialization;
 namespace DeliveryApp.Services 
 { 
     /// <summary>

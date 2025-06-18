@@ -14,17 +14,17 @@ namespace DeliveryApp.Models.Fees
         //Bike, car or scooter
         public string Vehicle { get; set; } = string.Empty;
         //Base fee for given transportation in given city
-        public double RBF { get; set; }
+        public double Rbf { get; set; }
         //Extra fee if temp is below -10c
-        public double FreezingATEF { get; set; }
+        public double FreezingAtef { get; set; }
         //Extra fee if temp is between -10c and 0c
-        public double ColdATEF { get; set; }
+        public double ColdAtef { get; set; }
         //Extra fee for bikes in case strong wind
-        public double WSEF { get; set; }
+        public double Wsef { get; set; }
         //Extra fee in case snowy weather
-        public double SnowEF { get; set; }
+        public double SnowEf { get; set; }
         //Extra fee in case rainy weather
-        public double RainEF { get; set; }
+        public double RainEf { get; set; }
         public DateTime Modified { get; set; }
     }
 }

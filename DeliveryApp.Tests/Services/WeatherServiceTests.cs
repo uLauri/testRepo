@@ -1,14 +1,10 @@
 ﻿using DeliveryApp.Data.Repositories;
 using DeliveryApp.Models.Weather;
 using DeliveryApp.Services;
+using DeliveryApp.Tests.Helpers;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DeliveryApp.Tests
+namespace DeliveryApp.Tests.Services
 {
     public class WeatherServiceTests
     {

@@ -1,7 +1,6 @@
 ﻿using DeliveryApp.Models.Fees;
 using DeliveryApp.Models.Weather;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace DeliveryApp.Data
 {
@@ -23,15 +22,15 @@ namespace DeliveryApp.Data
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Fees>().HasData(
-                new Fees { Id = 1, City = "Tallinn", ColdATEF = 0.5, FreezingATEF = 1.0, Modified = DateTime.Today, RainEF = 0.5, RBF = 3.5, SnowEF = 1.0, Vehicle = "Scooter", WSEF = 0.0 },
-                new Fees { Id = 2, City = "Tallinn", ColdATEF = 0.5, FreezingATEF = 1.0, Modified = DateTime.Today, RainEF = 0.5, RBF = 3.0, SnowEF = 1.0, Vehicle = "Bike", WSEF = 0.5 },
-                new Fees { Id = 3, City = "Tallinn", ColdATEF = 0.0, FreezingATEF = 0.0, Modified = DateTime.Today, RainEF = 0.0, RBF = 4.0, SnowEF = 0.0, Vehicle = "Car", WSEF = 0.0 },
-                new Fees { Id = 4, City = "Tartu", ColdATEF = 0.5, FreezingATEF = 1.0, Modified = DateTime.Today, RainEF = 0.5, RBF = 3.0, SnowEF = 1.0, Vehicle = "Scooter", WSEF = 0.0 },
-                new Fees { Id = 5, City = "Tartu", ColdATEF = 0.5, FreezingATEF = 1.0, Modified = DateTime.Today, RainEF = 0.5, RBF = 2.5, SnowEF = 1.0, Vehicle = "Bike", WSEF = 0.5 },
-                new Fees { Id = 6, City = "Tartu", ColdATEF = 0.0, FreezingATEF = 0.0, Modified = DateTime.Today, RainEF = 0.0, RBF = 3.5, SnowEF = 0.0, Vehicle = "Car", WSEF = 0.0 },
-                new Fees { Id = 7, City = "Pärnu", ColdATEF = 0.5, FreezingATEF = 1.0, Modified = DateTime.Today, RainEF = 0.5, RBF = 2.5, SnowEF = 1.0, Vehicle = "Scooter", WSEF = 0.0 },
-                new Fees { Id = 8, City = "Pärnu", ColdATEF = 0.5, FreezingATEF = 1.0, Modified = DateTime.Today, RainEF = 0.5, RBF = 2.0, SnowEF = 1.0, Vehicle = "Bike", WSEF = 0.5 },
-                new Fees { Id = 9, City = "Pärnu", ColdATEF = 0.0, FreezingATEF = 0.0, Modified = DateTime.Today, RainEF = 0.0, RBF = 3.0, SnowEF = 0.0, Vehicle = "Car", WSEF = 0.0 }
+                new Fees { Id = 1, City = "Tallinn", ColdAtef = 0.5, FreezingAtef = 1.0, Modified = DateTime.Today, RainEf = 0.5, Rbf = 3.5, SnowEf = 1.0, Vehicle = "Scooter", Wsef = 0.0 },
+                new Fees { Id = 2, City = "Tallinn", ColdAtef = 0.5, FreezingAtef = 1.0, Modified = DateTime.Today, RainEf = 0.5, Rbf = 3.0, SnowEf = 1.0, Vehicle = "Bike", Wsef = 0.5 },
+                new Fees { Id = 3, City = "Tallinn", ColdAtef = 0.0, FreezingAtef = 0.0, Modified = DateTime.Today, RainEf = 0.0, Rbf = 4.0, SnowEf = 0.0, Vehicle = "Car", Wsef = 0.0 },
+                new Fees { Id = 4, City = "Tartu", ColdAtef = 0.5, FreezingAtef = 1.0, Modified = DateTime.Today, RainEf = 0.5, Rbf = 3.0, SnowEf = 1.0, Vehicle = "Scooter", Wsef = 0.0 },
+                new Fees { Id = 5, City = "Tartu", ColdAtef = 0.5, FreezingAtef = 1.0, Modified = DateTime.Today, RainEf = 0.5, Rbf = 2.5, SnowEf = 1.0, Vehicle = "Bike", Wsef = 0.5 },
+                new Fees { Id = 6, City = "Tartu", ColdAtef = 0.0, FreezingAtef = 0.0, Modified = DateTime.Today, RainEf = 0.0, Rbf = 3.5, SnowEf = 0.0, Vehicle = "Car", Wsef = 0.0 },
+                new Fees { Id = 7, City = "Pärnu", ColdAtef = 0.5, FreezingAtef = 1.0, Modified = DateTime.Today, RainEf = 0.5, Rbf = 2.5, SnowEf = 1.0, Vehicle = "Scooter", Wsef = 0.0 },
+                new Fees { Id = 8, City = "Pärnu", ColdAtef = 0.5, FreezingAtef = 1.0, Modified = DateTime.Today, RainEf = 0.5, Rbf = 2.0, SnowEf = 1.0, Vehicle = "Bike", Wsef = 0.5 },
+                new Fees { Id = 9, City = "Pärnu", ColdAtef = 0.0, FreezingAtef = 0.0, Modified = DateTime.Today, RainEf = 0.0, Rbf = 3.0, SnowEf = 0.0, Vehicle = "Car", Wsef = 0.0 }
                 );
         }
     }

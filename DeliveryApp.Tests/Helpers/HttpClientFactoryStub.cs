@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DeliveryApp.Tests
+﻿
+namespace DeliveryApp.Tests.Helpers
 {
     public class HttpClientFactoryStub : IHttpClientFactory
     {

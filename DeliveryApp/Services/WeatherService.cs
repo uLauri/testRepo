@@ -1,5 +1,4 @@
-﻿using DeliveryApp.Data;
-using DeliveryApp.Data.Repositories;
+﻿using DeliveryApp.Data.Repositories;
 using DeliveryApp.Models.Weather;
 
 namespace DeliveryApp.Services

@@ -1,9 +1,8 @@
-using DeliveryApp.Data;
 using DeliveryApp.Models;
 using DeliveryApp.Models.Fees;
 using DeliveryApp.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace DeliveryApp.Controllers
 {
@@ -13,6 +12,7 @@ namespace DeliveryApp.Controllers
     /// Query Parameters are city and vehicle
     /// Returns delivery fee in FeeResponse format (given city, vehicle and calculated fee)
     /// </summary>
+    [Authorize]
     [ApiController]
     [Route("api/delivery")]
     public class FeeCalculationController : ControllerBase

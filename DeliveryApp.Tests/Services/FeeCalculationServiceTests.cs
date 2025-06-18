@@ -2,10 +2,9 @@ using DeliveryApp.Data.Repositories;
 using DeliveryApp.Models.Fees;
 using DeliveryApp.Models.Weather;
 using DeliveryApp.Services;
-using Xunit;
 using Moq;
 
-namespace DeliveryApp.Tests
+namespace DeliveryApp.Tests.Services
 {
     /// <summary>
     /// Tests for main business logic calculations based on windspeed, temperature and weather phenomenas, edge cases.
@@ -23,7 +22,7 @@ namespace DeliveryApp.Tests
                 .ReturnsAsync(new WeatherCondition { Name = "Tallinn", WeatherPhenomenon = "Clear", WindSpeed = 5 });
 
             mockFeeRepo.Setup(repo => repo.GetFeesByCityAndVehicleAsync("Tallinn", "car"))
-                .ReturnsAsync(new Fees { RBF = 10 });
+                .ReturnsAsync(new Fees { Rbf = 10 });
 
             var service = new FeeCalculationService(mockWeatherRepo.Object, mockFeeRepo.Object);
 
@@ -42,7 +41,7 @@ namespace DeliveryApp.Tests
                 .ReturnsAsync(new WeatherCondition { Name = "tallinn", WeatherPhenomenon = "Clear", WindSpeed = 25 });
 
             mockFeeRepo.Setup(repo => repo.GetFeesByCityAndVehicleAsync("tallinn", "bike"))
-                .ReturnsAsync(new Fees { RBF = 5 });
+                .ReturnsAsync(new Fees { Rbf = 5 });
 
             var service = new FeeCalculationService(mockWeatherRepo.Object, mockFeeRepo.Object);
 
@@ -61,7 +60,7 @@ namespace DeliveryApp.Tests
                 .ReturnsAsync(new WeatherCondition { Name = "Tartu", WeatherPhenomenon = "Clear", AirTemperature = -11 });
 
             mockFeeRepo.Setup(repo => repo.GetFeesByCityAndVehicleAsync("tartu", "bike"))
-                .ReturnsAsync(new Fees { RBF = 5, FreezingATEF = 2 });
+                .ReturnsAsync(new Fees { Rbf = 5, FreezingAtef = 2 });
 
             var service = new FeeCalculationService(mockWeatherRepo.Object, mockFeeRepo.Object);
 
@@ -80,7 +79,7 @@ namespace DeliveryApp.Tests
                 .ReturnsAsync(new WeatherCondition { Name = "Tartu", WeatherPhenomenon = "Clear", AirTemperature = -5 });
 
             mockFeeRepo.Setup(repo => repo.GetFeesByCityAndVehicleAsync("tartu", "scooter"))
-                .ReturnsAsync(new Fees { RBF = 5, ColdATEF = 1 });
+                .ReturnsAsync(new Fees { Rbf = 5, ColdAtef = 1 });
 
             var service = new FeeCalculationService(mockWeatherRepo.Object, mockFeeRepo.Object);
 
@@ -95,10 +94,10 @@ namespace DeliveryApp.Tests
             var mockFeeRepo = new Mock<IFeeRepository>();
 
             mockWeatherRepo.Setup(repo => repo.GetWeatherConditionAsync("tartu"))
-                .ReturnsAsync(new WeatherCondition { Name = "Tartu", WeatherPhenomenon = "Heavy rain", AirTemperature = 10 , WindSpeed = 15});
+                .ReturnsAsync(new WeatherCondition { Name = "Tartu", WeatherPhenomenon = "Heavy rain", AirTemperature = 10, WindSpeed = 15 });
 
             mockFeeRepo.Setup(repo => repo.GetFeesByCityAndVehicleAsync("tartu", "bike"))
-                .ReturnsAsync(new Fees { RBF = 5, RainEF = 5 , WSEF = 3});
+                .ReturnsAsync(new Fees { Rbf = 5, RainEf = 5, Wsef = 3 });
 
             var service = new FeeCalculationService(mockWeatherRepo.Object, mockFeeRepo.Object);
 
@@ -117,7 +116,7 @@ namespace DeliveryApp.Tests
                 .ReturnsAsync(new WeatherCondition { Name = "Tartu", WeatherPhenomenon = "Moderate snowfall", AirTemperature = 10, WindSpeed = 12 });
 
             mockFeeRepo.Setup(repo => repo.GetFeesByCityAndVehicleAsync("tartu", "bike"))
-                .ReturnsAsync(new Fees { RBF = 5, SnowEF = 7, WSEF = 2 });
+                .ReturnsAsync(new Fees { Rbf = 5, SnowEf = 7, Wsef = 2 });
 
             var service = new FeeCalculationService(mockWeatherRepo.Object, mockFeeRepo.Object);
 
@@ -136,7 +135,7 @@ namespace DeliveryApp.Tests
                 .ReturnsAsync(new WeatherCondition { Name = "Tartu", WeatherPhenomenon = "Hail", AirTemperature = 10, WindSpeed = 12 });
 
             mockFeeRepo.Setup(repo => repo.GetFeesByCityAndVehicleAsync("tartu", "bike"))
-                .ReturnsAsync(new Fees { RBF = 5, SnowEF = 7, WSEF = 2 });
+                .ReturnsAsync(new Fees { Rbf = 5, SnowEf = 7, Wsef = 2 });
 
             var service = new FeeCalculationService(mockWeatherRepo.Object, mockFeeRepo.Object);
 

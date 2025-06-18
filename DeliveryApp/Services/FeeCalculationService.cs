@@ -38,7 +38,7 @@ namespace DeliveryApp.Services
 
             if (vehicleType == "car")
             {
-                return fees.RBF;
+                return fees.Rbf;
             }
             else
             {
@@ -46,7 +46,7 @@ namespace DeliveryApp.Services
 
                 if (vehicleType == "bike" && (conditions.WindSpeed >= 10) && (conditions.WindSpeed <= 20))
                 {
-                    finalFee += fees.WSEF;
+                    finalFee += fees.Wsef;
                 }
             }
 
@@ -61,22 +61,22 @@ namespace DeliveryApp.Services
         /// <returns></returns>
         public double CalculateScooterAndBikeFees(Fees fees, WeatherCondition conditions)
         {
-            var finalFee = fees.RBF;
+            var finalFee = fees.Rbf;
 
             if (conditions.AirTemperature < -10)
-                finalFee += fees.FreezingATEF;
+                finalFee += fees.FreezingAtef;
 
             if (-10 <= conditions.AirTemperature && conditions.AirTemperature <= 0)
-                finalFee += fees.ColdATEF;
+                finalFee += fees.ColdAtef;
 
             var snowConditions = Rules.SnowConditions;
             var rainyConditions = Rules.RainyConditions;
 
             if (snowConditions.Contains(conditions.WeatherPhenomenon.ToLower()))
-                finalFee += fees.SnowEF;
+                finalFee += fees.SnowEf;
 
             if (rainyConditions.Contains(conditions.WeatherPhenomenon.ToLower()))
-                finalFee += fees.RainEF;
+                finalFee += fees.RainEf;
             
             return finalFee;
         }
